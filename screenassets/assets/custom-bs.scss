@@ -1,0 +1,24 @@
+// le mie personalizzazioni
+//1) scaricare i files sorgente di bs.
+//2) vado a lavorare nella cartella scss dove ci sono tutti i partials di bs.
+
+//importo i partials functions.scss e variables.scss
+@import "scss/functions";
+@import "scss/variables";
+
+// personalizzo
+$new-primary: rgb(255, 81, 0, 0.998);
+$new-secondary: rgba(137, 0, 250, 0.998);
+$new-info: rgba(250, 0, 200, 0.998);
+
+// creo la mia mappa colori
+$new-theme-colors: (
+  "primary": $new-primary,
+  "secondary": $new-secondary,
+  "info": $new-info,
+);
+
+// faccio il merge tra la mia mappa e quella di default
+$theme-colors: map-merge($theme-colors, $new-theme-colors);
+
+@import "scss/bootstrap.scss";
